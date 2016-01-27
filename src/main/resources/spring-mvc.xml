@@ -11,8 +11,13 @@
                             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	<!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
 	<!-- 自动扫描 -->
+	<!-- <context:component-scan base-package="com.zxl"/> -->
+	<context:component-scan base-package="com.zxl.controller"/>
+	<context:component-scan base-package="com.zxl.service"/>
+	<context:component-scan base-package="com.zxl.dao"/>
+	<context:component-scan base-package="com.zxl.model"/>
 	<context:component-scan base-package="com.zxl" use-default-filters="false">
-		<context:include-filter type="regex" expression="\.(controller|service|dao|model)\.*"/>
+		<context:include-filter type="regex" expression="\.(service|dao|model)\.*"/>
 	</context:component-scan>
 	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->
 	<bean id="mappingJacksonHttpMessageConverter"
