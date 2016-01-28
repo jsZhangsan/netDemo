@@ -16,7 +16,7 @@ public class UserController {
 	@Resource
 	private UserService userService;
 	
-	@RequestMapping("/showUser.do")
+	@RequestMapping("/showUser")
 	public String showUser(HttpServletRequest request,Model model) {
 		String id = request.getParameter("id");
 		System.out.println(userService.selUser(id));
