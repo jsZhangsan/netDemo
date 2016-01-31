@@ -1,5 +1,8 @@
 package com.zxl.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.stereotype.Repository;
 
 import com.zxl.model.TUser;
@@ -17,4 +20,8 @@ public interface TUserMapper {
     int updateByPrimaryKeySelective(TUser record);
 
     int updateByPrimaryKey(TUser record);
+    
+    int addUser(Map<String, Object> map);
+    
+    List<Map<String, Object>> selUserList(Map<String, Object> map);
 }

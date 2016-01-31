@@ -68,4 +68,16 @@
       pass_word = #{passWord,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  
+  <insert id="addUser"  parameterType="java.util.Map">
+    insert into t_user (user_name, pass_word
+      )
+    values (#{userName,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR}
+      )
+  </insert>
+  
+  <select id="selUserList" resultType="java.util.Map" parameterType="java.util.Map" >
+    select *
+    from t_user
+  </select>
 </mapper>

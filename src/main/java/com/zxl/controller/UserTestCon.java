@@ -1,24 +1,23 @@
 package com.zxl.controller;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zxl.dao.TUserMapper;
 
 @Controller
 @RequestMapping("/")
-public class UserTestCon {
+public class UserTestCon extends BaseContorller{
 	@Resource
 	private TUserMapper tUserMapper;
 	
-	@RequestMapping("/tu")
-	public String tu(HttpServletRequest request,Model model) {
-		String id = request.getParameter("id");
-		System.out.println(tUserMapper.selectByPrimaryKey(id));
+	@RequestMapping("tuu.do")
+	public String tu(Dto dto) {
+		System.out.println(dto.getMap().get("id"));
 		
 		return "tu";
 	}
