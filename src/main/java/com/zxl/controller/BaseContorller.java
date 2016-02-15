@@ -6,7 +6,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
 public class BaseContorller {
-	
 	@InitBinder("dto")  
 	public void initUserBinder(WebDataBinder binder) {  
 	    binder.setFieldDefaultPrefix("dto.");  

@@ -1,11 +1,20 @@
 package com.zxl.model;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class TUser {
     private String id;
 
     private String userName;
 
     private String passWord;
+    
+    private Double money;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birthday;
 
     public String getId() {
         return id;
@@ -30,10 +39,23 @@ public class TUser {
     public void setPassWord(String passWord) {
         this.passWord = passWord == null ? null : passWord.trim();
     }
+    
+    
 
-	@Override
-	public String toString() {
-		return "TUser [id=" + id + ", userName=" + userName + ", passWord=" + passWord + "]";
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public Double getMoney() {
+		return money;
+	}
+
+	public void setMoney(Double money) {
+		this.money = money;
 	}
     
 }
